@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard Clevent</title>
+
+<link rel="stylesheet" href="css/dashboard.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+<div class="logo">
+<img src="images/logo.png">
+<span>Clevent</span>
+</div>
+
+<ul class="menu">
+<li><a href="index.html" class="btn-nav">Home</a></li>
+</ul>
+
+</header>
+
+
+<!-- HERO DASHBOARD -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Dashboard Statistik Clevent</h1>
+
+<p>
+Melihat transparansi kinerja layanan kami,
+jumlah event yang ditangani,
+serta tingkat kepuasan pelanggan.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- STATISTICS -->
+
+<section class="stats">
+
+<div class="stat-card">
+<h2 class="counter" data-target="150">0</h2>
+<p>Event Ditangani</p>
+</div>
+
+<div class="stat-card">
+<h2 class="counter" data-target="98">0</h2>
+<p>% Kepuasan Pelanggan</p>
+</div>
+
+<div class="stat-card">
+<h2 class="counter" data-target="20">0</h2>
+<p>Tim Profesional</p>
+</div>
+
+<div class="stat-card">
+<h2 class="counter" data-target="10">0</h2>
+<p>Kota Layanan</p>
+</div>
+
+</section>
+
+
+<!-- CHART SECTION -->
+
+<section class="charts">
+
+<div class="chart-box">
+
+<h3>Jenis Event</h3>
+
+<canvas id="eventChart"></canvas>
+
+</div>
+
+
+<div class="chart-box">
+
+<h3>Pertumbuhan Event</h3>
+
+<canvas id="growthChart"></canvas>
+
+</div>
+
+</section>
+
+
+<!-- AREA LAYANAN -->
+
+<section class="area">
+
+<h2>Area Layanan</h2>
+
+<div class="area-grid">
+
+<div class="area-card">Padang</div>
+<div class="area-card">Bukittinggi</div>
+<div class="area-card">Payakumbuh</div>
+<div class="area-card">Solok</div>
+<div class="area-card">Pariaman</div>
+
+</div>
+
+</section>
+
+
+<!-- PERFORMA -->
+
+<section class="performance">
+
+<h2>Performa Layanan</h2>
+
+<div class="performance-grid">
+
+<div class="perf-card">
+<h3>2 – 4 Jam</h3>
+<p>Rata-rata waktu pembersihan</p>
+</div>
+
+<div class="perf-card">
+<h3>5000+ Kg</h3>
+<p>Sampah dikelola per tahun</p>
+</div>
+
+<div class="perf-card">
+<h3>4 – 8</h3>
+<p>Petugas per event</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- TESTIMONI -->
+
+<section class="testimoni">
+
+<h2>Testimoni Pelanggan</h2>
+
+<div class="testi-slider" id="slider">
+
+<div class="testi-card">
+<p>⭐⭐⭐⭐⭐</p>
+<p>Tim Clevent sangat profesional dan responsif.</p>
+<h4>Rina</h4>
+</div>
+
+<div class="testi-card">
+<p>⭐⭐⭐⭐⭐</p>
+<p>Acara kami tetap bersih selama berlangsung.</p>
+<h4>Panitia Kampus</h4>
+</div>
+
+<div class="testi-card">
+<p>⭐⭐⭐⭐⭐</p>
+<p>Sangat membantu event perusahaan kami.</p>
+<h4>PT Andalas</h4>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PARTNER -->
+
+<section class="partner">
+
+<h2>Partner Kami</h2>
+
+<div class="partner-grid">
+
+<img src="images/logo.png">
+<img src="images/logo.png">
+<img src="images/logo.png">
+<img src="images/logo.png">
+
+</div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+<h2>Siap membuat acara tetap bersih?</h2>
+
+<a href="pemesanan.html" class="btn-primary">
+Pesan Cleaning Service
+</a>
+
+</section>
+
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>

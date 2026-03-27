@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Booking Cleaning Service Event</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/pemesanan.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+
+    <div class="logo">
+      <img src="images/logo.png" alt="Logo Clevent">
+      <span>Clevent</span>
+    </div>
+
+    <div class="navbar-text">
+      Pesan Sekarang & Nikmati Layanan Kami
+    </div>
+
+    <a href="index.html" class="btn-nav">
+      Home
+    </a>
+
+  </header>
+
+  <!-- BOOKING SECTION -->
+  <main class="booking-container">
+
+    <h1>Booking Cleaning Service Event</h1>
+
+    <!-- STEP INDICATOR -->
+    <div class="progress-wrapper">
+
+    <div class="progress-bar-bg">
+    <div class="progress-bar-fill" id="progressFill"></div>
+    </div>
+
+    <div class="progress-steps">
+
+    <div class="progress-step active">
+    <span>1</span>
+    </div>
+
+    <div class="progress-step">
+    <span>2</span>
+    </div>
+
+    <div class="progress-step">
+    <span>3</span>
+    </div>
+
+    <div class="progress-step">
+    <span>4</span>
+    </div>
+
+    <div class="progress-step">
+    <span>5</span>
+    </div>
+
+    <div class="progress-step">
+    <span>6</span>
+    </div>
+
+    </div>
+
+    </div>
+    
+    <form id="bookingForm">
+    <div class="step-slider">
+      <!-- STEP 1 -->
+      <section class="step active">
+
+        <h3>Pilih Jenis Layanan</h3>
+
+        <div class="option-grid">
+          <div class="option-card" data-value="Sebelum Acara">Sebelum Acara</div>
+          <div class="option-card" data-value="Selama Acara">Selama Acara</div>
+          <div class="option-card" data-value="Setelah Acara">Setelah Acara</div>
+          <div class="option-card" data-value="Paket Lengkap">Paket Lengkap</div>
+        </div>
+
+        <div class="buttons">
+          <button type="button" class="btn btn-next">Next</button>
+        </div>
+
+      </section>
+
+
+      <!-- STEP 2 -->
+      <section class="step">
+
+        <h3>Jenis Event</h3>
+
+        <div class="option-grid">
+          <div class="option-card" data-value="Pernikahan">Pernikahan</div>
+          <div class="option-card" data-value="Ulang Tahun">Ulang Tahun</div>
+          <div class="option-card" data-value="Event Kampus">Event Kampus</div>
+          <div class="option-card" data-value="Acara Perusahaan">Perusahaan</div>
+          <div class="option-card" data-value="Hajatan">Hajatan</div>
+        </div>
+
+        <div class="buttons">
+          <button type="button" class="btn btn-back">Back</button>
+          <button type="button" class="btn btn-next">Next</button>
+        </div>
+
+      </section>
+
+
+      <!-- STEP 3 -->
+      <section class="step">
+
+      <h3>Detail Acara</h3>
+
+      <div class="form-group">
+      <label>Nama</label>
+      <input type="text" id="nama">
+      <div class="error-text" id="error-nama">Nama wajib diisi</div>
+      </div>
+
+      <div class="form-group">
+      <label>WhatsApp</label>
+      <input type="text" id="wa">
+      <div class="error-text" id="error-wa">Nomor WhatsApp wajib diisi</div>
+      </div>
+
+      <div class="form-group">
+      <label>Tanggal Event</label>
+      <input type="date" id="tanggal">
+      <div class="error-text" id="error-tanggal">Tanggal wajib dipilih</div>
+      </div>
+
+      <div class="form-group">
+      <label>Waktu Acara</label>
+      <input type="time" id="waktu">
+      </div>
+
+      <div class="form-group">
+      <label>Lokasi Event</label>
+      <input type="text" id="lokasi">
+      <div class="error-text" id="error-lokasi">Lokasi wajib diisi</div>
+      </div>
+
+      <div class="form-group">
+      <label>Kapasitas Tamu</label>
+      <select id="kapasitas">
+      <option value="100">0 - 100 orang</option>
+      <option value="300">100 - 300 orang</option>
+      <option value="500">300 - 500 orang</option>
+      <option value="800">500+ orang</option>
+      </select>
+      </div>
+
+      <div class="buttons">
+      <button type="button" class="btn btn-back">Back</button>
+      <button type="button" class="btn btn-next">Next</button>
+      </div>
+
+      </section>
+
+
+      <!-- STEP 4 -->
+      <section class="step">
+
+        <h3>Pilih Paket</h3>
+
+        <div class="option-grid">
+
+          <div class="option-card" data-price="300000">
+            Basic <br>
+            2 Petugas <br>
+            Rp300.000
+          </div>
+
+          <div class="option-card" data-price="600000">
+            Standard <br>
+            4 Petugas <br>
+            Rp600.000
+          </div>
+
+          <div class="option-card" data-price="900000">
+            Premium <br>
+            6 Petugas <br>
+            Rp900.000
+          </div>
+
+        </div>
+
+        <div class="buttons">
+          <button type="button" class="btn btn-back">Back</button>
+          <button type="button" class="btn btn-next">Next</button>
+        </div>
+
+      </section>
+
+
+      <!-- STEP 5 -->
+      <section class="step">
+
+        <h3>Tambahan Layanan</h3>
+
+        <div class="addons">
+
+          <label>
+            <input type="checkbox" value="50000">
+            Pengangkutan Sampah (+50k)
+          </label>
+
+          <label>
+            <input type="checkbox" value="70000">
+            Cleaning Toilet (+70k)
+          </label>
+
+          <label>
+            <input type="checkbox" value="80000">
+            Cleaning Karpet (+80k)
+          </label>
+
+          <label>
+            <input type="checkbox" value="100000">
+            Tambah Petugas (+100k)
+          </label>
+
+        </div>
+
+        <div class="buttons">
+          <button type="button" class="btn btn-back">Back</button>
+          <button type="button" class="btn btn-next">Next</button>
+        </div>
+
+      </section>
+
+
+      <!-- STEP 6 -->
+      <section class="step">
+
+        <h3>Ringkasan Pesanan</h3>
+
+        <div class="summary" id="summary"></div>
+
+        <div class="price" id="price"></div>
+
+        <a id="waLink" class="btn-wa">
+          Kirim Pesanan ke WhatsApp
+        </a>
+
+        <div class="buttons">
+          <button type="button" class="btn btn-back">Back</button>
+        </div>
+
+      </section>
+    </div>
+    </form>
+
+  </main>
+
+  <!-- JS -->
+<script src="js/booking.js" defer></script>
+
+</body>
+</html>

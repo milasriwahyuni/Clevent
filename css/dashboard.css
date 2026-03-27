@@ -1,0 +1,326 @@
+/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#ffffff;
+color:#333;
+padding-top:100px;
+line-height:1.7;
+}
+
+/* LINK GLOBAL */
+a{
+transition:0.3s;
+}
+
+/* NAVBAR */
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:16px 8%;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:1000;
+background:#fff;
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
+}
+
+/* LOGO */
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+color:#1e5eff;
+font-weight:600;
+font-size:20px;
+}
+
+.logo img{
+width:38px;
+}
+
+/* TEXT */
+.navbar-text{
+font-size:18px;
+font-weight:500;
+color:#1e5eff;
+}
+
+/* MENU */
+.menu{
+display:flex;
+gap:25px;
+list-style:none;
+align-items:center;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #1e5eff;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.menu a:hover{
+background:#ffb300;
+color:#163fcc;
+}
+
+/* BUTTON */
+.btn-nav{
+background:#ffc61b;
+color:#1e5eff;
+padding:10px 22px;
+border-radius:30px;
+text-decoration:none;
+font-weight:500;
+display:inline-block;
+}
+
+.btn-nav:hover{
+background:#ffb300;
+transform:translateY(-2px);
+}
+
+/* HERO */
+.hero{
+background:linear-gradient(135deg,#1e5eff,#5f9cff);
+color:white;
+text-align:center;
+padding:120px 10%;
+}
+
+.hero h1{
+font-size:42px;
+margin-bottom:15px;
+}
+
+.hero p{
+opacity:0.9;
+}
+
+/* SECTION */
+section{
+margin-bottom:50px;
+}
+
+/* STATS */
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+padding:60px 10%;
+}
+
+.stat-card{
+background:#fff;
+padding:25px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
+transition:0.3s;
+cursor:pointer;
+}
+
+.stat-card:hover{
+transform:translateY(-8px);
+}
+
+.stat-card h2{
+font-size:34px;
+color:#1e5eff;
+margin-bottom:5px;
+}
+
+/* CHART */
+.charts{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+padding:60px 10%;
+}
+
+.chart-box{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* AREA */
+.area{
+text-align:center;
+padding:60px 10%;
+}
+
+.area-grid{
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+margin-top:25px;
+}
+
+.area-card{
+background:#1e5eff;
+color:white;
+padding:12px 25px;
+border-radius:20px;
+font-size:14px;
+}
+
+/* PERFORMANCE */
+.performance{
+background:#f7f9ff;
+padding:60px 10%;
+text-align:center;
+}
+
+.performance-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-top:25px;
+}
+
+.perf-card{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.perf-card:hover{
+transform:translateY(-5px);
+}
+
+/* TESTIMONI */
+.testimoni{
+padding:60px 10%;
+text-align:center;
+}
+
+.testi-slider{
+display:flex;
+gap:20px;
+overflow-x:auto;
+margin-top:25px;
+scroll-snap-type:x mandatory;
+}
+
+.testi-card{
+min-width:260px;
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+scroll-snap-align:start;
+}
+
+/* PARTNER */
+.partner{
+padding:60px 10%;
+text-align:center;
+}
+
+.partner-grid{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+margin-top:25px;
+}
+
+.partner-grid img{
+width:90px;
+opacity:0.6;
+transition:0.3s;
+}
+
+.partner-grid img:hover{
+opacity:1;
+transform:scale(1.1);
+}
+
+/* CTA */
+.cta{
+text-align:center;
+padding:60px 10%;
+}
+
+.btn-primary{
+display:inline-block;
+margin-top:15px;
+background:#1e5eff;
+color:white;
+padding:14px 30px;
+border-radius:40px;
+text-decoration:none;
+font-weight:500;
+}
+
+.btn-primary:hover{
+background:#163fcc;
+transform:translateY(-2px);
+}
+
+/* FOCUS (AKSESIBILITAS) */
+a:focus,
+button:focus{
+outline:2px solid #1e5eff;
+outline-offset:3px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+body{
+padding-top:90px;
+}
+
+/* NAVBAR */
+.navbar{
+padding:12px 5%;
+}
+
+/* HILANGKAN TEXT */
+.navbar-text{
+display:none;
+}
+
+/* BUTTON */
+.btn-nav{
+font-size:14px;
+padding:8px 18px;
+}
+
+/* HERO */
+.hero h1{
+font-size:28px;
+}
+
+/* CHART */
+.charts{
+grid-template-columns:1fr;
+}
+
+/* CARD LEBIH RAPAT */
+.stat-card,
+.perf-card{
+padding:18px;
+}
+
+}

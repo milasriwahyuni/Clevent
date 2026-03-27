@@ -1,0 +1,362 @@
+/* =========================
+   RESET & GLOBAL
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f4f7ff;
+  padding-top: 90px;
+  color: #333;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 8%;
+  background: #fff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: #1e5eff;
+  font-size: 20px;
+}
+
+.logo img {
+  width: 40px;
+}
+
+.navbar-text {
+  font-weight: 500;
+  color: #1e5eff;
+  font-size: 20px;
+}
+
+.btn-nav {
+  background: #ffc61b;
+  color: #1e5eff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.btn-nav:hover {
+  background: #ffb300;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.booking-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   PROGRESS BAR
+========================= */
+.progress-wrapper {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.progress-bar-bg {
+  height: 6px;
+  background: #eee;
+  border-radius: 20px;
+}
+
+.progress-bar-fill {
+  height: 10px;
+  background: #1e5eff;
+  border-radius: 20px;
+  width: 0%;
+  transition: 0.4s ease;
+}
+
+.progress-steps {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -10px;
+}
+
+.progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.progress-step span {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 3px solid #ddd;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.progress-step.active span {
+  border-color: #1e5eff;
+  background: #1e5eff;
+  color: #fff;
+}
+/* =========================
+   STEP (FIX FINAL)
+========================= */
+
+.step {
+  display: none;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+
+  /* animasi */
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* step aktif */
+.step.active {
+  display: block;
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+/* animasi smooth */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* =========================
+   OPTION CARD
+========================= */
+.option-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.option-card {
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.option-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.option-card.selected {
+  background: #1e5eff;
+  color: white;
+  border-color: #1e5eff;
+}
+
+/* =========================
+   FORM
+========================= */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  transition: 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #1e5eff;
+  outline: none;
+}
+
+/* =========================
+   ADDONS
+========================= */
+.addons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 15px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.btn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-next {
+  background: #1e5eff;
+  color: white;
+}
+
+.btn-back {
+  background: #ddd;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+/* =========================
+   SUMMARY
+========================= */
+.summary {
+  background: #f4f7ff;
+  padding: 20px;
+  border-radius: 12px;
+  line-height: 1.7;
+}
+
+.price {
+  font-size: 22px;
+  color: #1e5eff;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.btn-wa {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  padding: 14px;
+  background: #25d366;
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+}
+
+/* =========================
+   ERROR
+========================= */
+.error-text {
+  color: #e63946;
+  font-size: 13px;
+  margin-top: 5px;
+  display: none;
+}
+
+.input-error {
+  border-color: #e63946 !important;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+
+  .navbar-text {
+    display: none;
+  }
+
+  .booking-container {
+    padding: 25px 20px;
+  }
+
+  .option-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .addons {
+    grid-template-columns: 1fr;
+  }
+
+  .btn {
+    padding: 10px 18px;
+    font-size: 13px;
+  }
+}
+
+
+/* =========================
+   PREMIUM STYLE
+========================= */
+
+.booking-container {
+  background: linear-gradient(145deg, #ffffff, #f0f4ff);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+}
+
+.option-card {
+  transition: all 0.3s ease;
+}
+
+.option-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.btn {
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+h3 {
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.option-grid {
+  margin-top: 15px;
+}
+
+.buttons {
+  margin-top: 25px;
+}

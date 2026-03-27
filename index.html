@@ -1,0 +1,429 @@
+<?php
+include "config/db.php";
+$event = mysqli_query($conn, "SELECT * FROM event_cleaning ORDER BY id DESC LIMIT 3");
+?>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clevent Cleaning Service</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css?v=1">
+    
+    <!-- Icon Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+</head>
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo Clevent">
+            <span>Clevent</span>
+        </div>
+
+        <!-- Hamburger Menu -->
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#tentang">Tentang Kami</a></li>
+            <li><a href="#katalog">Layanan</a></li>
+            <li><a href="#section-proses-kerja">Proses Kerja</a></li>
+            <li><a href="#section-event-info">Jenis Event & Area</a></li>
+            <li><a href="#section-pricing">Harga</a></li>
+            <li><a href="dashboard.html" class="btn-nav">Dashboard</a></li>
+        </ul>
+    </nav>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <h1>Jasa Cleaning Service <br><span>Profesional</span></h1>
+                <p>Kami membantu menjaga kebersihan acara Anda mulai dari sebelum, selama, hingga setelah event.</p>
+                <div class="hero-button">
+                    <a href="pemesanan.html" class="btn">Pesan Sekarang</a>
+                    <a href="event.html" class="btn-outline">Lihat Event</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/g1.jpg" alt="Cleaning Service">
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= TENTANG KAMI ================= -->
+    <section id="tentang" class="section tentang">
+        <div class="tentang-wrapper">
+            <!-- KIRI -->
+            <div class="tentang-kiri">
+                <h2>Tentang Kami</h2>
+                <p><strong>Clevent</strong> adalah solusi kebersihan profesional untuk berbagai jenis acara seperti pernikahan, ulang tahun, seminar, konser, hingga acara perusahaan.</p>
+                <p>Kami hadir untuk memastikan setiap acara berjalan nyaman dan bersih dengan tim profesional serta peralatan modern.</p>
+                <div class="tentang-highlight">
+                    <div class="highlight-item"><i class="fa-solid fa-users"></i><span>Tim Profesional</span></div>
+                    <div class="highlight-item"><i class="bi bi-tools"></i><span>Peralatan Lengkap</span></div>
+                    <div class="highlight-item"><i class="fa-solid fa-shield"></i><span>Pelayanan Terpercaya</span></div>
+                    <div class="highlight-item"><i class="fa-solid fa-star"></i><span>Kualitas Terbaik</span></div>
+                    <div class="highlight-item"><i class="bi bi-cash-stack"></i><span>Harga Terjangkau</span></div>
+                </div>
+            </div>
+
+            <!-- KANAN -->
+            <div class="tentang-kanan">
+                <div class="visi-box">
+                    <h3><i class="fa-solid fa-eye"></i> Visi</h3>
+                    <p>Menjadi penyedia jasa cleaning service event terbaik dan terpercaya di Indonesia.</p>
+                </div>
+                <div class="misi-box">
+                    <h3><i class="fa-solid fa-bullseye"></i> Misi</h3>
+                    <ul>
+                        <li>Memberikan layanan kebersihan berkualitas tinggi</li>
+                        <li>Menyediakan tim profesional dan berpengalaman</li>
+                        <li>Menjaga standar kebersihan di setiap acara</li>
+                        <li>Memberikan pelayanan cepat dan efisien</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= KATALOG LAYANAN ================= -->
+    <section id="katalog" class="section katalog">
+        <h2>Layanan</h2>
+        <p class="katalog-sub">Kami menyediakan berbagai layanan cleaning service untuk memastikan acara Anda tetap bersih, nyaman, dan profesional.</p>
+        <div class="katalog-grid">
+            <!-- CARD 1 -->
+            <div class="katalog-card">
+                <div class="icon-box"><i class="bi bi-stars"></i></div>
+                <h3>Cleaning Sebelum Acara</h3>
+                <p>Membersihkan seluruh area sebelum acara dimulai agar lokasi siap digunakan.</p>
+                <button class="btn-detail" onclick="openPopup('popup1')">Lihat Detail</button>
+            </div>
+            <!-- CARD 2 -->
+            <div class="katalog-card">
+                <div class="icon-box"><i class="bi bi-people"></i></div>
+                <h3>Cleaning Selama Acara</h3>
+                <p>Tim kami standby selama acara untuk menjaga kebersihan area.</p>
+                <button class="btn-detail" onclick="openPopup('popup2')">Lihat Detail</button>
+            </div>
+            <!-- CARD 3 -->
+            <div class="katalog-card">
+                <div class="icon-box"><i class="bi bi-trash"></i></div>
+                <h3>Cleaning Setelah Acara</h3>
+                <p>Pembersihan total setelah acara selesai agar lokasi kembali rapi.</p>
+                <button class="btn-detail" onclick="openPopup('popup3')">Lihat Detail</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= POPUP DETAIL ================= -->
+    <div class="popup" id="popup1">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('popup1')">&times;</span>
+            <h3>Cleaning Sebelum Acara</h3>
+            <ul>
+                <li>Menyapu dan mengepel area</li>
+                <li>Membersihkan panggung</li>
+                <li>Membersihkan meja dan kursi</li>
+                <li>Membersihkan toilet</li>
+                <li>Membersihkan area parkir</li>
+            </ul>
+        </div>
+    </div>
+    <div class="popup" id="popup2">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('popup2')">&times;</span>
+            <h3>Cleaning Selama Acara</h3>
+            <ul>
+                <li>Mengambil sampah</li>
+                <li>Membersihkan meja tamu</li>
+                <li>Menjaga kebersihan toilet</li>
+                <li>Mengganti kantong sampah</li>
+            </ul>
+        </div>
+    </div>
+    <div class="popup" id="popup3">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('popup3')">&times;</span>
+            <h3>Cleaning Setelah Acara</h3>
+            <ul>
+                <li>Mengumpulkan sampah</li>
+                <li>Membersihkan sisa makanan</li>
+                <li>Menyapu dan mengepel</li>
+                <li>Mengembalikan kondisi lokasi</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ================= PROSES KERJA ================= -->
+    <section id="section-proses-kerja" class="section proses-kerja">
+        <h2>Proses Kerja </h2>
+        <div class="proses-grid">
+            <div class="proses-card">
+                <div class="proses-icon"><i class="bi bi-chat-dots"></i></div>
+                <h4>Konsultasi</h4>
+                <p>Konsultasi kebutuhan acara dengan klien.</p>
+            </div>
+            <div class="proses-card">
+                <div class="proses-icon"><i class="bi bi-geo-alt"></i></div>
+                <h4>Survey Lokasi</h4>
+                <p>Survey lokasi acara jika diperlukan.</p>
+            </div>
+            <div class="proses-card">
+                <div class="proses-icon"><i class="bi bi-people"></i></div>
+                <h4>Menentukan Tim</h4>
+                <p>Menentukan jumlah tim cleaning service.</p>
+            </div>
+            <div class="proses-card">
+                <div class="proses-icon"><i class="bi bi-tools"></i></div>
+                <h4>Persiapan Alat</h4>
+                <p>Menyiapkan peralatan kebersihan.</p>
+            </div>
+            <div class="proses-card">
+                <div class="proses-icon"><i class="bi bi-play-btn"></i></div>
+                <h4>Pelaksanaan</h4>
+                <p>Tim bekerja sesuai jadwal acara.</p>
+            </div>
+            <div class="proses-card">
+                <div class="proses-icon"><i class="bi bi-check2-circle"></i></div>
+                <h4>Evaluasi</h4>
+                <p>Melakukan evaluasi hasil pekerjaan.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= EVENT & AREA ================= -->
+    <section id="section-event-info" class="section event-info">
+        <h2>Jenis Event dan Area Layanan</h2>
+        <p class="section-sub">Beberapa jenis acara dan area yang pernah kami tangani:</p>
+        <div class="event-area-wrapper">
+            <div class="event-left">
+                <h3>Jenis Event</h3>
+                <ul class="event-list">
+                    <li>Pernikahan</li>
+                    <li>Seminar</li>
+                    <li>Event Kampus</li>
+                    <li>Konser Musik</li>
+                    <li>Pameran</li>
+                    <li>Acara Ulang Tahun</li>
+                    <li>Gathering Perusahaan</li>
+                    <li>Festival Kuliner</li>
+                    <li>Event Komunitas</li>
+                </ul>
+            </div>
+            <div class="event-right">
+                <h3>Area Layanan</h3>
+                <ul class="area-grid">
+                    <li>Kota</li>
+                    <li>Kabupaten</li>
+                    <li>Area Kampus</li>
+                    <li>Gedung Pernikahan</li>
+                    <li>Aula</li>
+                    <li>Lapangan Acara</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+        <!-- ================= HARGA LAYANAN ================= -->
+    <section id="section-pricing" class="section pricing">
+        <h2>Harga Layanan</h2>
+        <p class="pricing-sub">Pilih paket layanan cleaning service sesuai kebutuhan acara Anda.</p>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Paket Basic</h3>
+                <p class="pricing-type">Cleaning sebelum acara</p>
+                <p class="pricing-range">Rp 300.000 – Rp 500.000</p>
+            </div>
+            <div class="pricing-card">
+                <h3>Paket Standby</h3>
+                <p class="pricing-type">Cleaning selama acara</p>
+                <p class="pricing-range">Rp 500.000 – Rp 1.000.000</p>
+            </div>
+            <div class="pricing-card">
+                <h3>Paket After Event</h3>
+                <p class="pricing-type">Cleaning setelah acara</p>
+                <p class="pricing-range">Rp 400.000 – Rp 800.000</p>
+            </div>
+            <div class="pricing-card featured">
+                <h3>Paket Lengkap Event</h3>
+                <p class="pricing-type">Before + During + After Event</p>
+                <p class="pricing-range">Rp 1.200.000 – Rp 2.500.000</p>
+            </div>
+        </div>
+        <p class="pricing-note">
+            Harga dapat berubah tergantung: ukuran lokasi, jumlah tamu, durasi acara.
+        </p>
+    </section>
+
+    <!-- ================= TESTIMONI ================= -->
+    <section class="section testimonials">
+        <h2>Testimoni Pelanggan</h2>
+        <p class="section-sub">Apa kata pelanggan kami setelah menggunakan jasa Clevent?</p>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">⭐ ⭐ ⭐ ⭐ ⭐</div>
+                <div class="testimonial-client">Rina – Wedding Organizer</div>
+                <div class="testimonial-text">
+                    "Tim cleaning sangat profesional dan cepat bekerja. Lokasi acara selalu bersih selama event berlangsung."
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">⭐ ⭐ ⭐ ⭐ ⭐</div>
+                <div class="testimonial-client">Andi – Panitia Seminar Kampus</div>
+                <div class="testimonial-text">
+                    "Sangat membantu menjaga kebersihan selama seminar. Timnya ramah dan responsif."
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">⭐ ⭐ ⭐ ⭐ ⭐</div>
+                <div class="testimonial-client">Sari – Event Organizer</div>
+                <div class="testimonial-text">
+                    "Setelah acara selesai, lokasi langsung bersih kembali. Sangat direkomendasikan."
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CARA PEMESANAN ================= -->
+    <section class="section cara-pemesanan">
+        <h2>Cara Pemesanan</h2>
+        <div class="pemesanan-grid">
+            <div class="pemesanan-card">
+                <div class="pemesanan-icon"><i class="bi bi-whatsapp"></i></div>
+                <h4>Hubungi Kami melalui WhatsApp</h4>
+            </div>
+            <div class="pemesanan-card">
+                <div class="pemesanan-icon"><i class="bi bi-info-circle"></i></div>
+                <h4>Sampaikan jenis acara dan lokasi</h4>
+            </div>
+            <div class="pemesanan-card">
+                <div class="pemesanan-icon"><i class="bi bi-calendar-event"></i></div>
+                <h4>Tentukan tanggal pelaksanaan acara</h4>
+            </div>
+            <div class="pemesanan-card">
+                <div class="pemesanan-icon"><i class="bi bi-cash-stack"></i></div>
+                <h4>Kami memberikan estimasi biaya</h4>
+            </div>
+            <div class="pemesanan-card">
+                <div class="pemesanan-icon"><i class="bi bi-check-circle"></i></div>
+                <h4>Konfirmasi pemesanan dan jadwal</h4>
+            </div>
+            <div class="pemesanan-card">
+                <div class="pemesanan-icon"><i class="bi bi-people"></i></div>
+                <h4>Tim datang sesuai jadwal acara</h4>
+            </div>
+        </div>
+        <a href="https://wa.me/6283186886551" target="_blank" class="btn-wa">
+            <i class="fa-brands fa-whatsapp"></i> Pesan WhatsApp
+        </a>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section class="faq section">
+        <h2>Paling Sering Ditanyakan</h2>
+
+        <div class="faq-item">
+            <button class="faq-question">Apa itu Clevent?<span>+</span></button>
+            <div class="faq-answer">
+                <p>Clevent adalah platform penyedia layanan jasa kebersihan untuk rumah dan event Anda.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Jenis bangunan apa saja yang dapat menggunakan layanan General Cleaning?<span>+</span></button>
+            <div class="faq-answer">
+                <p>General Cleaning mencakup rumah, apartemen, kantor, dan tempat usaha secara rutin.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Apa jadwal yang sudah dipesan dapat diubah?<span>+</span></button>
+            <div class="faq-answer">
+                <p>Ya, jadwal bisa diubah dengan menghubungi tim kami sebelum hari H.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Apakah ada garansi untuk layanan AC Cleaning?<span>+</span></button>
+            <div class="faq-answer">
+                <p>Ya, kami memberikan garansi pekerjaan AC Cleaning sesuai ketentuan layanan.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- KIRI: Hubungi Kami -->
+            <div class="footer-left">
+                <h3>Hubungi Kami</h3>
+                <p>Butuh jasa cleaning service untuk event? Hubungi kami sekarang!</p>
+                <ul class="contact-info">
+                    <li><i class="bi bi-telephone-fill"></i> Telepon: 08xxxxxxxxxx</li>
+                    <li><i class="bi bi-whatsapp"></i> WhatsApp: 08xxxxxxxxxx</li>
+                    <li><i class="bi bi-envelope-fill"></i> Email: info@cleaningevent.com</li>
+                    <li><i class="bi bi-geo-alt-fill"></i> Alamat: (Alamat kantor)</li>
+                </ul>
+            </div>
+
+            <!-- KANAN: Media Sosial -->
+            <div class="footer-right">
+                <h3>Ikuti Kami</h3>
+                <p>Jangan lewatkan update terbaru dari kami di media sosial:</p>
+                <ul class="social-media">
+                    <li><a href="#" target="_blank"><i class="bi bi-instagram"></i> Instagram</a></li>
+                    <li><a href="#" target="_blank"><i class="bi bi-tiktok"></i> TikTok</a></li>
+                    <li><a href="#" target="_blank"><i class="bi bi-whatsapp"></i> WhatsApp Business</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Clevent. Semua hak cipta dilindungi.
+        </div>
+    </footer>
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script>
+        // POPUP DETAIL
+        function openPopup(id) {
+            document.getElementById(id).style.display = "flex";
+        }
+        function closePopup(id) {
+            document.getElementById(id).style.display = "none";
+        }
+
+        // FAQ Accordion
+        const faqButtons = document.querySelectorAll(".faq-question");
+        faqButtons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                const answer = btn.nextElementSibling;
+                const isOpen = answer.style.maxHeight && answer.style.maxHeight !== "0px";
+                document.querySelectorAll(".faq-answer").forEach(a => a.style.maxHeight = null);
+                if (!isOpen) answer.style.maxHeight = answer.scrollHeight + "px";
+            });
+        });
+
+        // Hamburger toggle
+        const hamburger = document.querySelector('.hamburger');
+        const menu = document.querySelector('.menu');
+        hamburger.addEventListener('click', () => {
+            menu.classList.toggle('active'); // toggle menu
+            hamburger.classList.toggle('active'); // toggle hamburger animation
+        });
+    </script>
+
+</body>
+</html>
